@@ -1,0 +1,90 @@
+﻿<Application x:Class="Game_Explorer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+
+    <Application.Resources>
+        <Style x:Key="TransparentButton" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="./Assets/Fonts/#Poppins-Regular" />
+            <Setter Property="Foreground" Value="#FFF" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Padding" Value="1" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="5"
+                                SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="IconButton" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="./Assets/Fonts/#Segoe Fluent Icons" />
+            <Setter Property="Foreground" Value="#FFF" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Padding" Value="1" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Search" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+            <Setter Property="Foreground" Value="#FFF" />
+            <Setter Property="CaretBrush" Value="#FFF" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="AllowDrop" Value="true" />
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst" />
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+            <Setter Property="Cursor" Value="IBeam" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" SnapsToDevicePixels="True" Background="#FF111115"
+                                BorderThickness="0,0,1,0" BorderBrush="#FF1C1E24">
+                            <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal">
+                                <Path Height="9" Stretch="Fill" Width="9"
+                                      Data="M5.50262 5.19427L5.36087 5.36087L5.19427 5.50262C4.69425 5.92808 4.04677 6.18571 3.34286 6.18571C2.58888 6.18571 1.86579 5.8862 1.33265 5.35306C0.799514 4.81992 0.5 4.09683 0.5 3.34286C0.5 2.58888 0.799514 1.86579 1.33265 1.33265C1.86579 0.799514 2.58888 0.5 3.34286 0.5C4.09683 0.5 4.81992 0.799514 5.35306 1.33265C5.8862 1.86579 6.18571 2.58888 6.18571 3.34286C6.18571 4.04677 5.92808 4.69425 5.50262 5.19427ZM6.15714 6.15714H6.22147L8.29289 8.22857L8.22857 8.29289L6.15714 6.22147V6.15714Z"
+                                      Stroke="White" Margin="12,0,0,0" />
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="false"
+                                              HorizontalScrollBarVisibility="Hidden"
+                                              VerticalScrollBarVisibility="Hidden" VerticalAlignment="Center"
+                                              Margin="7,0,0,0" />
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true" />
+                        <Condition Property="IsSelectionActive" Value="false" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush"
+                            Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}" />
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+
+
+    </Application.Resources>
+</Application>
