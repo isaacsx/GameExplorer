@@ -1,0 +1,11 @@
+﻿version: "1.0"
+
+profile:
+  name: qodana.recommended
+
+exclude:
+  - name: Excluded files
+    paths:
+      - Game Explorer/bin
+      - Game Explorer/obj
+      - packages/
